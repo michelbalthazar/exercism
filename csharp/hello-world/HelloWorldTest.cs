@@ -3,6 +3,8 @@
 [TestFixture]
 public class HelloWorldTest
 {
+    public static void Main(){}
+
     [Test]
     public void Say_hi()
     {
