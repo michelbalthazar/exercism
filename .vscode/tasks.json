@@ -7,7 +7,7 @@
         {
             "taskName": "test",
             "args": [
-                "${workspaceRoot}\\csharp\\hello-world\\project.json"
+                "${workspaceRoot}\\csharp\\bob\\project.json"
             ],
             "isBuildCommand": false,
             "problemMatcher": "$msCompile"
@@ -15,7 +15,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}\\csharp\\hello-world\\project.json"
+                "${workspaceRoot}\\csharp\\bob\\project.json"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"

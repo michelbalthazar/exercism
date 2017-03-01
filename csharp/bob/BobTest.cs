@@ -9,56 +9,48 @@ public class BobTest
         Assert.That(Bob.Hey("Tom-ay-to, tom-aaaah-to."), Is.EqualTo("Whatever."));
     }
 
-    [Ignore("Remove to run test")]
     [Test]
     public void Shouting ()
     {
         Assert.That(Bob.Hey("WATCH OUT!"), Is.EqualTo("Whoa, chill out!"));
     }
 
-    [Ignore("Remove to run test")]
     [Test]
     public void Asking_a_question ()
     {
         Assert.That(Bob.Hey("Does this cryogenic chamber make me look fat?"), Is.EqualTo("Sure."));
     }
 
-    [Ignore("Remove to run test")]
     [Test]
     public void Asking_a_question_with_a_trailing_space()
     {
         Assert.That(Bob.Hey("Do I like my  spacebar  too much?  "), Is.EqualTo("Sure."));
     }
 
-    [Ignore("Remove to run test")]
     [Test]
     public void Asking_a_numeric_question ()
     {
         Assert.That(Bob.Hey("You are, what, like 15?"), Is.EqualTo("Sure."));
     }
 
-    [Ignore("Remove to run test")]
     [Test]
     public void Talking_forcefully ()
     {
         Assert.That(Bob.Hey("Let's go make out behind the gym!"), Is.EqualTo("Whatever."));
     }
 
-    [Ignore("Remove to run test")]
     [Test]
     public void Using_acronyms_in_regular_search ()
     {
         Assert.That(Bob.Hey("It's OK if you don't want to go to the DMV."), Is.EqualTo("Whatever."));
     }
 
-    [Ignore("Remove to run test")]
     [Test]
     public void Forceful_questions ()
     {
         Assert.That(Bob.Hey("WHAT THE HELL WERE YOU THINKING?"), Is.EqualTo("Whoa, chill out!"));
     }
 
-    [Ignore("Remove to run test")]
     [Test]
     public void Shouting_numbers ()
     {
