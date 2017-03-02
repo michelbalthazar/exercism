@@ -16,6 +16,12 @@ public class BobTest
     }
 
     [Test]
+    public void Asking_a_question_with_shouting()
+    {
+        Assert.That(Bob.Hey("Do I like my spacebar too much and I my icecream and I my icecream FUCK?"), Is.EqualTo("Whoa, chill out!"));
+    }
+
+    [Test]
     public void Asking_a_question ()
     {
         Assert.That(Bob.Hey("Does this cryogenic chamber make me look fat?"), Is.EqualTo("Sure."));
@@ -25,6 +31,12 @@ public class BobTest
     public void Asking_a_question_with_a_trailing_space()
     {
         Assert.That(Bob.Hey("Do I like my  spacebar  too much?  "), Is.EqualTo("Sure."));
+    }
+    
+    [Test]
+    public void Asking_a_question_with_a_many_I()
+    {
+        Assert.That(Bob.Hey("Do I like my  spacebar  too much and I my icecream and I my icecream?  "), Is.EqualTo("Sure."));
     }
 
     [Test]
@@ -57,14 +69,12 @@ public class BobTest
         Assert.That(Bob.Hey("1, 2, 3 GO!"), Is.EqualTo("Whoa, chill out!"));
     }
 
-    [Ignore("Remove to run test")]
     [Test]
     public void Only_numbers ()
     {
         Assert.That(Bob.Hey("1, 2, 3"), Is.EqualTo("Whatever."));
     }
 
-    [Ignore("Remove to run test")]
     [Test]
     public void Question_with_only_numbers ()
     {
@@ -85,14 +95,12 @@ public class BobTest
         Assert.That(Bob.Hey("I HATE YOU"), Is.EqualTo("Whoa, chill out!"));
     }
 
-    [Ignore("Remove to run test")]
     [Test]
     public void Statement_containing_question_mark ()
     {
         Assert.That(Bob.Hey("Ending with ? means a question."), Is.EqualTo("Whatever."));
     }
 
-    [Ignore("Remove to run test")]
     [Test]
     public void Prattling_on ()
     {
@@ -113,7 +121,6 @@ public class BobTest
         Assert.That(Bob.Hey("    "), Is.EqualTo("Fine. Be that way!"));
     }
 
-    [Ignore("Remove to run test")]
     [Test]
     public void Multiple_line_question ()
     {

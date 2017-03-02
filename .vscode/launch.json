@@ -6,7 +6,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}\\csharp\\hello-world\\bin\\Debug\\netcoreapp1.1\\hello-world.dll",
+            "program": "${workspaceRoot}\\csharp\\bob\\bin\\Debug\\netcoreapp1.1\\bob.dll",
             "args": [],
             "cwd": "${workspaceRoot}",
             "externalConsole": false,
