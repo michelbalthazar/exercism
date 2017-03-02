@@ -26,4 +26,9 @@ public class Squares
         
         return sum;
     }
+    public int DifferenceOfSquares()
+    {
+        return SquareOfSums() - SumOfSquares();
+    }
+    
 }
