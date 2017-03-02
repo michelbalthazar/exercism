@@ -23,10 +23,11 @@ public class Squares
     {
         int sum = 0;
         for (int i = 0; i <= _num; i++)
-            sum += i*i;
+            sum += i * i;
         
         return sum;
     }
+
     public int DifferenceOfSquares()
     {
         return SquareOfSums() - SumOfSquares();
