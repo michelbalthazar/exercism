@@ -105,14 +105,12 @@ public class BobTest
         Assert.That(Bob.Hey("Wait! Hang on. Are you going to be OK?"), Is.EqualTo("Sure."));
     }
 
-    [Ignore("Remove to run test")]
     [Test]
     public void Silence ()
     {
         Assert.That(Bob.Hey(""), Is.EqualTo("Fine. Be that way!"));
     }
 
-    [Ignore("Remove to run test")]
     [Test]
     public void Prolonged_silence ()
     {
