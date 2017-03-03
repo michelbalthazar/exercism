@@ -48,6 +48,12 @@ public class GrainsTest
     [Test]
     public void Test_total_grains()
     {
+        System.Console.WriteLine(Grains.Square(1));
+        System.Console.WriteLine(Grains.Square(2));
+        System.Console.WriteLine(Grains.Square(3));
+
+        System.Console.WriteLine(Grains.Square(4));
+        System.Console.WriteLine(Grains.Square(5));
         Assert.That(Grains.Total(), Is.EqualTo(18446744073709551615));
     }
 }
