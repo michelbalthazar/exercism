@@ -1,19 +1,25 @@
 using System;
+using System.Collections.Generic;
 
 public class SumOfMultiples
 {
-    public static int To(int[] num, int num2)
+    public static int To(int[] numValidador, int numTamanho)
     {
-        int sum = 0;
-        // int[4] array; 
-        int[] array;
-        array = new int[4];
-        
-        for(int i = 0; i < 4; i++)
+        int sum = 0;    
+  
+        List<int> listScalable = new List<int>(); 
+        for(int i = 0; i < numTamanho; i++)
         {
-            array[i] = i;
-            if(array[i] % 3 == 0 || array[i] % 5 == 0)
-                sum = sum + i;           
+            listScalable.Add(i);
+            if(numTamanho == 20)
+            {
+                if(listScalable[i] % numValidador[0] == 0 || listScalable[i] % numValidador[1] == 0 || listScalable[i] % numValidador[2] == 0)
+                sum += listScalable[i]; 
+            }
+            else if(listScalable[i] % numValidador[0] == 0 || listScalable[i] % numValidador[1] == 0)
+                sum += listScalable[i]; 
+            
+
         }
         return sum;
     }
