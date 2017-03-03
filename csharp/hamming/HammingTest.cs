@@ -8,6 +8,12 @@ public class HammingTest
     {
         Assert.That(Hamming.Compute("",""), Is.EqualTo(0));
     }
+    
+    [Test]
+    public void No_difference_between_WhiteSpace_strands()
+    {
+        Assert.That(Hamming.Compute(" ",""), Is.EqualTo(-1));
+    }   
 
     [Test]
     public void No_difference_between_identical_strands()
