@@ -8,7 +8,7 @@ public class Pangram
         if (pangram == "")
             return false;
 
-        string alphabet = "öäüßabcdefghijklmnopqrstuvwxyz";      
+        string alphabet = "abcdefghijklmnopqrstuvwxyz";      
         bool ret = false;
 
         int cont = 0;
@@ -22,7 +22,7 @@ public class Pangram
                     cont++;
                     break;
                 }
-                if(cont > 24)
+                if(cont >= 24)
                 {
                      ret = true;
                 }
