@@ -1,45 +1,34 @@
-// public class NucleotideCounts
-// {
-//     char[] _dna;
-//     public string DNA(char[] dna)
-//     {  
-//         this._dna = dna;
-//         return "x";
-//     }
-//     public int Dictionary() 
-//     {
-//         int count;
-//         string[] dictionary = new string[] {"A", "T", "C", "G"};
-//         foreach(var validate in DNA())
-//         {
-//             if(validate == dictionary)
-//             count++;
-//         }
-//         if(count < 1)
-//             return "Expected";
-
-//         return "Expected";
-
-//     }       
-// }
-
 using System;
+using System.Collections.Generic;
 
 public class DNA
 {
-      private string _nucleo;
+    private string _nucleo;
     public DNA(string nucleo)
     {
        this._nucleo = nucleo;
     }
   
-    public string NucleotideCounts()
+    public Dictionary<char, int> NucleotideCounts()
     {
-        return null;       
+        
+        return new Dictionary<char, int> { { 'A', Count('A') }, { 'T', Count('T')} , { 'C', Count('C') }, { 'G', Count('G') } };       
     }
 
-    internal object Count(char v)
-    {
-        throw new NotImplementedException();
+    internal int Count(char v)
+    {      
+        
+        int count = 0;
+        foreach(var validateDna in _nucleo)
+        {
+            if(validateDna == v)
+                count++;
+                
+           if(v != 'A' && v != 'C' && v != 'T' && v != 'G')  
+             throw new InvalidNucleotideException();
+        }
+        
+               
+        return count;
     }
 }
