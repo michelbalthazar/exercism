@@ -1,15 +1,22 @@
 using System;
 using System.Collections.Generic;
-
 public static class AccumulateExtension
 {
-    public static int Accumulate(this int[] number, Func<int, int> accumulateFunction)
+    public static IEnumerable<int> Accumulate(this IEnumerable<int> numbers, Func<int, int> accumulateFunction )
     {
-        return 0;
+        foreach(var num in numbers)
+        {
+            yield return accumulateFunction(num);            
+        }
     }
-
-    public static int Accumulate(this List<string> number, Func<string, string> accumulateFunction)
+  
+    public static IEnumerable<string> Accumulate(this IEnumerable<string> phrase, Func<string, string> accumulateFunction)
     {
-        return 0;
+         var ret = new List<string>();
+
+         foreach(var letter in phrase)
+             ret.Add(accumulateFunction(letter));
+
+        return ret;
     }
 }
