@@ -11,7 +11,6 @@ public class RaindropsTest
         return Raindrops.Convert(number);
     }
 
-    [Ignore("Remove to run test")]
     [TestCase(3)]
     [TestCase(6)]
     [TestCase(9)]
@@ -20,7 +19,6 @@ public class RaindropsTest
         Assert.That(Raindrops.Convert(number), Is.EqualTo("Pling"));
     }
 
-    [Ignore("Remove to run test")]
     [TestCase(5)]
     [TestCase(10)]
     [TestCase(25)]
@@ -29,7 +27,6 @@ public class RaindropsTest
         Assert.That(Raindrops.Convert(number), Is.EqualTo("Plang"));
     }
 
-    [Ignore("Remove to run test")]
     [TestCase(7)]
     [TestCase(14)]
     [TestCase(49)]
@@ -38,7 +35,6 @@ public class RaindropsTest
         Assert.That(Raindrops.Convert(number), Is.EqualTo("Plong"));
     }
 
-    [Ignore("Remove to run test")]
     [TestCase(15, ExpectedResult = "PlingPlang")]
     [TestCase(21, ExpectedResult = "PlingPlong")]
     [TestCase(35, ExpectedResult = "PlangPlong")]
