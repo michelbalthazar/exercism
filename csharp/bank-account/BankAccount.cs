@@ -22,14 +22,17 @@ public class BankAccount
     {
         _open = false;
     }
-    public double Balance ()
-    {
-        if (_open == false)
-        {
-            throw new InvalidOperationException("Abrir a conta para executar essa ação!");
 
+    public double Balance
+    {
+        get 
+        {
+            if (_open == false)
+            {
+                throw new InvalidOperationException("Abrir a conta para executar essa ação!");
+            }
+            return _valor;
         }
-        return _valor;
     }
 
     public void UpdateBalance (double valor)

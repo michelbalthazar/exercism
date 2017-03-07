@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using NUnit.Framework;
 
@@ -29,7 +28,6 @@ public class BankAccountTest
         Assert.That(updatedBalance, Is.EqualTo(10));
     }
 
-    [Ignore("Remove to run test")]
     [Test]
     public void Balance_can_increment_and_decrement()
     {
@@ -48,7 +46,6 @@ public class BankAccountTest
         Assert.That(subtractedBalance, Is.EqualTo(-5));
     }
 
-    [Ignore("Remove to run test")]
     [Test]
     public void Closed_account_throws_exception_when_checking_balance()
     {
@@ -59,7 +56,6 @@ public class BankAccountTest
         Assert.That(() => account.Balance, Throws.InvalidOperationException);
     }
 
-    [Ignore("Remove to run test")]
     [Test]
     public void Change_account_balance_from_multiple_threads()
     {
