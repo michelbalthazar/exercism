@@ -21,5 +21,12 @@ public class School
             _roster[grade].Add(nome);
             _roster[grade].Sort();
     }
-    
+    public List<string> Count (int grade)
+    {
+        if(!_roster.ContainsKey(grade))
+            _roster.Add(grade, new List<string>());
+            List<string> alunos = Roster [grade];
+
+        return alunos;
+    }
 }
