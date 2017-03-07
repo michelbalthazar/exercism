@@ -1,27 +1,25 @@
 using System;
+using System.Collections.Generic;
 
 public class School
 {
-    private string _nome {get; set;}
-    private int _grade {get; set;} 
-    public School ()
+    public Dictionary<int, List<string>> _roster = new Dictionary<int, List<string>>();
+
+    public Dictionary<int, List<string>> Roster
     {
-        
+        get
+        {    
+            return _roster;
+        }
+
     }
 
-    public int Roster (int grade)
+     public void Add(string nome, int grade)
     {
-        this._grade = grade;
-        return _grade;
+        if(!_roster.ContainsKey(grade))
+            _roster.Add(grade, new List<string>());
+            _roster[grade].Add(nome);
+            _roster[grade].Sort();
     }
     
-    public int Count (int counter)
-    {
-        return counter;
-    }
-
-    internal void Add(string v1, int v2)
-    {
-        throw new NotImplementedException();
-    }
 }

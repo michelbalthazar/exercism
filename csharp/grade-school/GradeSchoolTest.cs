@@ -12,11 +12,11 @@ public class GradeSchoolTest
         school = new School();
     }
 
-    // [Test]
-    // public void New_school_has_an_empty_roster()
-    // {
-    //     Assert.That(school.Roster, Has.Count.EqualTo(0));
-    // }
+    [Test]
+    public void New_school_has_an_empty_roster()
+    {
+        Assert.That(school.Roster, Has.Count.EqualTo(0));
+    }
 
     // [Ignore("Remove to run test")]
     // [Test]
