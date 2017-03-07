@@ -1,15 +1,42 @@
-class BankAccount
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+public class BankAccount
 {
-    public int Open()
+    public BankAccount()
     {
-        BankAccount account = new BankAccount();
-        return 0;
+
     }
-    public int Balance()
+    private double _valor = 0;
+    private bool _open { get; set; }
+
+    private Object bloqueio = new Object();
+
+    public void Open ()
     {
-        BankAccount account = new BankAccount();
-        return 0;
+        _open = true;
+    }
+    public void Close ()
+    {
+        _open = false;
+    }
+    public double Balance ()
+    {
+        if (_open == false)
+        {
+            throw new InvalidOperationException("Abrir a conta para executar essa ação!");
+
+        }
+        return _valor;
     }
 
-            
+    public void UpdateBalance (double valor)
+    {
+        lock (bloqueio)
+        {
+            _valor += valor;
+        }
+    }
 }
