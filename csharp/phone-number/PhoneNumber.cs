@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 
 public class PhoneNumber
 {
@@ -6,20 +7,34 @@ public class PhoneNumber
     public PhoneNumber(string phoneNumber)
     {
         this._phoneNumber = phoneNumber;
+        
     }
-
-
+    public string ToString()
+    {
+        
+        return _phoneNumber = Regex.Replace(_phoneNumber, @"(\d{3})(\d{3})(\d{4})", "($1) $2-$3");
+    }
     public string Number
     {
         get
         {
-            if (_phoneNumber.Length >= 10)
+
+            
+
+            _phoneNumber = _phoneNumber.Replace("(", "").Replace(")", "").Replace("-",
+                "").Replace(" ", "").Replace(".", "");
+
+            if (_phoneNumber.Length == 10)
             {
                 return _phoneNumber;
             }
 
+            if (_phoneNumber.StartsWith("1") && _phoneNumber.Length > 10)
+            {
+                return _phoneNumber.Substring(1);
+            }
 
-            return _phoneNumber;
+            return "0000000000";
         }
     }
 
@@ -27,7 +42,7 @@ public class PhoneNumber
     {
         get
         {
-            throw new NotImplementedException("You need to implement this function.");
+            return _phoneNumber.Remove(3);
         }
     }
 }
