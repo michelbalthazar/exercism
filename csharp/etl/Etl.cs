@@ -3,27 +3,18 @@ using System.Collections.Generic;
 
 public class ETL
 {
-    public Dictionary<int, List<string>> _etl = new Dictionary<int, List<string>> ();
-    public void AddList (int key, string value)
+    internal static Dictionary<string, int> Transform(Dictionary<int, IList<string>> old)
     {
-        if(this._etl.ContainsKey (key))
-        {
-            List<string> list = this._etl [key];
-            if (list.Contains (value) == false)
-                list.Add (value);
-        }
-        else
-        {
-            List<string> list = new List<string>();
-            list.Add(value);
-            this._etl.Add (key, list);
-        }
-    }
+        Dictionary<string, int> expected = new Dictionary<string, int>();
 
-    internal static object Transform(Dictionary<int, IList<string>> old)
-    {
-        
-       
-        return old;
+        foreach (var older in old)
+        {
+            foreach (var item in older.Value)
+            {                
+                expected.Add(item.ToLower(), older.Key);
+            }
+        }
+
+        return expected;
     }
 }
