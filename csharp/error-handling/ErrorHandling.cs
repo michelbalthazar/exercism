@@ -19,11 +19,37 @@ public static class ErrorHandling
 
     public static bool HandleErrorWithOutParam(string input, out int result)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        bool successfulResult = false;
+        if(input == "1")
+        {
+            result = 1;
+            successfulResult = true;
+            return successfulResult;
+        }
+        else
+             result = 1; 
+             return successfulResult;
+
+    }
+
+    private class DisposableResouce : IDisposable
+    {
+        public bool IsDisposed 
+        {
+            get;
+            
+            private set;
+        }
+
+        public void Dispose()
+        {
+            IsDisposed = true;
+        }
     }
 
     public static void DisposableResourcesAreDisposedWhenExceptionIsThrown(IDisposable disposableObject)
-    {
-        throw new NotImplementedException("You need to implement this function.");
+    {   
+        disposableObject.Dispose();
+        throw new Exception();
     }
 }
