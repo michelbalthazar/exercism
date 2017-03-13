@@ -11,18 +11,21 @@ public static class PerfectNumbers
 {
     public static NumberType Classify(int number)
     {
-       NumberType result;
-       int sum = 0;
-       for(int i = 0; i <= number; i++)
-       {
-           if(number % i == 0)
-           {
-                sum += 1;
-           }
-       }
-       if(sum == number)
-        return Enum.GetNames.GetType.Perfect;
+        int sum = 0;
+        for (int i = 1; i < number; i++)
+        {
+            if (number % i == 0)
+            {
+                sum += i;
+            }
+        }
+        if (sum == number)
+            return NumberType.Perfect;
 
-        return result;
+        else if (sum > number)
+            return NumberType.Abundant;
+            
+        else
+            return NumberType.Deficient;
     }
 }
